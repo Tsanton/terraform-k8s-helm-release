@@ -13,7 +13,7 @@ resource "helm_release" "helm" {
     for_each = var.config_overrides
 
     content {
-      name = set.key
+      name  = set.key
       value = set.value
     }
   }
