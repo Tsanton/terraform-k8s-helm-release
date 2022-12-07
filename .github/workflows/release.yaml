@@ -26,12 +26,14 @@ jobs:
           fetch-depth: 0
 
       - name: Release
-        uses: cycjimmy/semantic-release-action@v2
+        # Action: https://github.com/cycjimmy/semantic-release-action, which utilise the https://github.com/semantic-release/semantic-release program @semantic_version
+        uses: cycjimmy/semantic-release-action@v3.2.0
         with:
-          semantic_version: 18.0.0
+          # Semantic release version: https://github.com/semantic-release/semantic-release
+          semantic_version: 19.0.5
           extra_plugins: |
-            @semantic-release/changelog@6.0.0
-            @semantic-release/git@10.0.0
-            conventional-changelog-conventionalcommits@4.6.3
+            @semantic-release/changelog@6.0.2
+            @semantic-release/git@10.0.1
+            conventional-changelog-conventionalcommits@5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
